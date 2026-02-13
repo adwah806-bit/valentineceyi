@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Kamu ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --maroon:#7a1f2b;
+  --pink:#f7c6d0;
+  --cream:#fff6ef;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+
+body{
+  background:var(--cream);
+  color:#333;
+  overflow-x:hidden;
+}
+
+section{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:40px;
+  text-align:center;
+}
+
+h1{color:var(--maroon);margin-bottom:15px}
+p{max-width:650px;margin:10px auto;line-height:1.7}
+
+button{
+  padding:12px 28px;
+  border:none;
+  border-radius:30px;
+  font-size:16px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.btn-yes{background:var(--maroon);color:white}
+.btn-yes:hover{transform:scale(1.05)}
+
+.btn-no{background:#ccc;color:#666;position:absolute}
+
+.card{
+  background:white;
+  padding:25px;
+  border-radius:20px;
+  margin:15px 0;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  max-width:520px;
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s;
+}
+
+.card.show{opacity:1;transform:translateY(0)}
+
+.surprise{
+  display:none;
+  animation:fade 1.5s forwards;
+}
+
+@keyframes fade{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+footer{padding:40px;font-size:14px;color:#777}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<section id="intro">
+  <h1>Hai kamu 🙂</h1>
+  <p>
+    HAPPY VALENTINE DAY SAYANGG🩷
+
+SEBELUM LANJUTTT..... AKU MAU TANYAA....
+KAMUUU SIAPP BUATT BUKA INIII BEBEEE?
+  </p>
+
+  <div id="btnWrap" style="position:relative;height:120px;margin-top:20px">
+    <button id="yesBtn" class="btn-yes" onclick="start()">Siap 💌</button>
+    <button id="noBtn" class="btn-no">Engga</button>
+  </div>
+
+  <p style="margin-top:40px;font-size:14px">
+    Halaman ini dibuat khusus untuk 💖<br>
+    <b>My Istri</b><br>
+    <b>My Bebeee</b><br>
+    <b>Sherly Febriana Putri</b>
+  </p>
+</section>
+
+<!-- STORY -->
+<section id="main" style="display:none">
+
+  <h1>Dunia kecil kita</h1>
+
+  <div class="card">
+    <h3>Awal yang nggak disangka</h3>
+    <p>
+      Dari obrolan biasa yang mungkin terlihat sepele,  
+      pelan-pelan berubah jadi kebiasaan yang aku tunggu.  
+      Dan sekarang… kamu jadi salah satu bagian paling nyaman.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Momen sederhana</h3>
+    <p>
+      Ketawa nggak jelas, cerita random,  
+      atau cuma saling ada tanpa harus ngomong banyak.  
+      Ternyata yang kecil justru yang paling berkesan.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Hal yang diam-diam aku suka</h3>
+    <p>
+      Cara kamu cerita dengan semangat.  
+      Cara kamu jadi diri sendiri.  
+      Dan cara kamu bikin suasana terasa lebih hangat tanpa sadar.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Fun fact hubungan kita 😆</h3>
+    <p>
+      Kita bisa serius banget…  
+      tapi juga bisa ketawa cuma karena hal paling nggak penting.  
+      Dan jujur, itu bagian favoritku.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Pesan kecil</h3>
+    <p>
+      Aku mungkin nggak selalu sempurna,  
+      tapi aku selalu bersyukur kamu ada.  
+      Karena sejak kamu hadir,  
+      banyak hal terasa lebih ringan. Thankyou Pretty Girl🤍
+    </p>
+  </div>
+
+  <button onclick="showSurprise()" style="margin-top:20px" class="btn-yes">
+    Buka sesuatu 🎁
+  </button>
+
+  <div id="surprise" class="surprise">
+    <h1 style="margin-top:40px">Surprise 💖</h1>
+    <p>
+      Terima kasih sudah hadir dalam hidupku.  
+      Terima kasih untuk setiap tawa, sabar, dan cerita.
+    </p>
+
+    <p>
+      Aku nggak tau masa depan bakal seperti apa,  
+      tapi aku harap kita bisa terus bikin  
+      banyak kenangan sederhana bareng.
+    </p>
+
+    <p style="margin-top:20px;font-weight:600;color:var(--maroon)">
+      Happy Valentine ❤️
+    </p>
+  </div>
+
+</section>
+
+<footer>
+  •Dibuat dengan hati 💌
+-Adwah
+</footer>
+
+<script>
+function start(){
+  document.getElementById("intro").style.display="none";
+  document.getElementById("main").style.display="flex";
+  reveal();
+}
+
+function reveal(){
+  const cards=document.querySelectorAll(".card");
+  cards.forEach((card,i)=>{
+    setTimeout(()=>card.classList.add("show"), i*300);
+  });
+}
+
+function showSurprise(){
+  document.getElementById("surprise").style.display="block";
+  document.getElementById("surprise").scrollIntoView({behavior:"smooth"});
+}
+
+/* tombol no kabur + yes membesar */
+const noBtn=document.getElementById("noBtn");
+const yesBtn=document.getElementById("yesBtn");
+let scale=1;
+
+noBtn.addEventListener("mouseover",()=>{
+  const wrap=document.getElementById("btnWrap");
+  const maxX=wrap.clientWidth-noBtn.clientWidth;
+  const maxY=wrap.clientHeight-noBtn.clientHeight;
+
+  noBtn.style.left=Math.random()*maxX+"px";
+  noBtn.style.top=Math.random()*maxY+"px";
+
+  scale+=0.1;
+  yesBtn.style.transform=`scale(${scale})`;
+});
+</script>
+
+</body>
+</html>
